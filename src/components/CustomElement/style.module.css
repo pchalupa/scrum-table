@@ -1,0 +1,8 @@
+.container {
+	display: grid;
+	grid-template-columns: 1fr 0.95fr;
+	grid-template-rows: 7vh 1fr;
+	grid-auto-rows: 1fr;
+	grid-gap: 5vh;
+	min-block-size: 75vh;
+}

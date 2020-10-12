@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`custom-element renders correctly 1`] = `
+<custom-element
+  class="container"
+>
+  <div />
+</custom-element>
+`;

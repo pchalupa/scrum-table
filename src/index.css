@@ -1,0 +1,23 @@
+:root {
+	--primary-color: #bfbfbf;
+	--secondary-color: #fff;
+	--tertiary-color: #e4e6e8;
+	--background-color: #d9e3ed;
+	--base-font-size: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--primary-color: #c6c6c6;
+		--secondary-color: #4d4d4d;
+		--background-color: #1b1e20;
+	}
+}
+
+html {
+	font-size: var(--base-font-size);
+}
+
+body {
+	font-family: system-ui;
+}
