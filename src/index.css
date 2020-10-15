@@ -1,11 +1,12 @@
 :root {
-	--primary-color: #bfbfbf;
-	--secondary-color: #fff;
-	--tertiary-color: #e4e6e8;
-	--background-color: #d9e3ed;
+	--primary-color: #ffffff;
+	--secondary-color: #e6e6e8;
+	--tertiary-color: #9e9fa4;
+	--background-color: #f5f6f8;
+	--shadow-color: rgba(0, 0, 0, 0.1);
 	--base-font-size: 16px;
 }
-
+/*
 @media (prefers-color-scheme: dark) {
 	:root {
 		--primary-color: #c6c6c6;
@@ -13,11 +14,15 @@
 		--background-color: #1b1e20;
 	}
 }
+*/
 
 html {
 	font-size: var(--base-font-size);
 }
 
 body {
+	margin: 0;
 	font-family: system-ui;
+	background-color: var(--background-color);
+	min-block-size: 100vh;
 }
