@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`scrum-task renders correctly 1`] = `
+<scrum-task
+  class="container"
+  draggable="true"
+  name="Název"
+>
+  <div
+    class="name"
+  />
+</scrum-task>
+`;

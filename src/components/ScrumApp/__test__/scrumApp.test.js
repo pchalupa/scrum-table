@@ -1,7 +1,7 @@
 import '../index';
 
-describe('custom-element', () => {
-	const ELEMENT_TAG = 'custom-element';
+describe('scrum-app', () => {
+	const ELEMENT_TAG = 'scrum-app';
 	let element;
 
 	beforeEach(() => {

@@ -1,6 +1,6 @@
-import './components/CustomElement';
+import './components/ScrumApp';
 import './index.css';
 
-/** @type {CustomElement} */
-const customElement = document.createElement('custom-element');
+/** @type {ScrumApp} */
+const customElement = document.createElement('scrum-app');
 document.body.appendChild(customElement);

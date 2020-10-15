@@ -1,0 +1,24 @@
+.container {
+	display: grid;
+	grid-template-columns: 1fr 0.5fr;
+	grid-template-rows: 1fr 1fr;
+	gap: 1rem;
+	background-color: var(--primary-color);
+	border-radius: 0.5rem;
+	box-shadow: -1rem 0.25rem 0.5rem var(--shadow-color);
+	padding: 1rem;
+	margin-top: 1rem;
+	transition: 125ms ease-in;
+}
+
+.container:hover {
+	box-shadow: -1rem 1rem 1.5rem var(--shadow-color);
+	transform: scale(1.025);
+	z-index: 10;
+	transition: 125ms ease-out;
+}
+
+.name {
+	font-size: 1.5rem;
+	font-weight: 800;
+}

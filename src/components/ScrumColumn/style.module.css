@@ -1,0 +1,21 @@
+.container {
+	display: flex;
+	flex-direction: column;
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+}
+
+.button {
+	background-color: var(--primary-color);
+	border-color: var(--secondary-color);
+	border-style: solid;
+	border-radius: 0.5rem;
+	color: var(--tertiary-color);
+	font-size: 1rem;
+	padding: 1rem;
+	margin-top: 1rem;
+	cursor: pointer;
+}

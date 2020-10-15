@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`scrum-app renders correctly 1`] = `
+<scrum-app
+  class="container"
+>
+  <scrum-column
+    class="container"
+    title="Pondělí"
+  >
+    <div />
+    <div
+      class="list"
+    />
+    <button
+      class="button"
+    >
+      + Úkol
+    </button>
+  </scrum-column>
+  <scrum-column
+    class="container"
+    title="Úterý"
+  >
+    <div />
+    <div
+      class="list"
+    />
+    <button
+      class="button"
+    >
+      + Úkol
+    </button>
+  </scrum-column>
+  <scrum-column
+    class="container"
+    title="Středy"
+  >
+    <div />
+    <div
+      class="list"
+    />
+    <button
+      class="button"
+    >
+      + Úkol
+    </button>
+  </scrum-column>
+  <scrum-column
+    class="container"
+    title="Čtvrtek"
+  >
+    <div />
+    <div
+      class="list"
+    />
+    <button
+      class="button"
+    >
+      + Úkol
+    </button>
+  </scrum-column>
+  <scrum-column
+    class="container"
+    title="Pátek"
+  >
+    <div />
+    <div
+      class="list"
+    />
+    <button
+      class="button"
+    >
+      + Úkol
+    </button>
+  </scrum-column>
+</scrum-app>
+`;

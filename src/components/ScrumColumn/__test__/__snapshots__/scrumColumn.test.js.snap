@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`scrum-column renders correctly 1`] = `
+<scrum-column
+  class="container"
+>
+  <div />
+  <div
+    class="list"
+  />
+  <button
+    class="button"
+  >
+    + Úkol
+  </button>
+</scrum-column>
+`;
