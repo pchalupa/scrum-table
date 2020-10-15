@@ -36,7 +36,7 @@ module.exports = {
 	},
 	plugins: [
 		new CleanWebpackPlugin(),
-		new HtmlWebpackPlugin({ favicon: path.resolve(__dirname, './src/assets/favicon.ico'), hash: true }),
+		new HtmlWebpackPlugin({ favicon: path.resolve(__dirname, './src/assets/favicon.ico'), hash: true, title: 'SCRUM table' }),
 		new MiniCssExtractPlugin({
 			filename: '[name].css',
 		}),
