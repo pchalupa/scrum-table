@@ -1,6 +1,7 @@
 /** @module ScrumApp */
 
 import '../ScrumColumn';
+import { config } from '../../constants';
 import { container } from './style.module.css';
 
 /**
@@ -22,8 +23,7 @@ class ScrumApp extends window.HTMLElement {
 	 */
 	render() {
 		/** @type {SearchResult} */
-		const columns = ['Pondělí', 'Úterý', 'Středy', 'Čtvrtek', 'Pátek'];
-		this.columns = columns.map((columnTitle) => {
+		this.columns = config.columns.map((columnTitle) => {
 			const column = document.createElement('scrum-column');
 			column.title = columnTitle;
 			this.appendChild(column);
