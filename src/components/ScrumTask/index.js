@@ -1,6 +1,6 @@
 /** @module ScrumTask */
 
-import { container, name } from './style.module.css';
+import { container, name, dragged } from './style.module.css';
 
 /**
  * Define custom-app web component.
@@ -21,10 +21,24 @@ class ScrumTask extends window.HTMLElement {
 		return this.getAttribute('name');
 	}
 
+	/** @type {Boolean} */
+	set dragged(state) {
+		this.classList.toggle(dragged, state);
+	}
+
 	constructor() {
 		super();
 
+		/** @type {Boolean} */
 		this.isEdited = false;
+
+		/** @type {Boolean} */
+		this.isDraged = false;
+
+		this.addEventListener('dragstart', (e) => this.handleDrag(e));
+		this.addEventListener('dragend', () => {
+			this.dragged = false;
+		});
 
 		/** @type {HTMLDivElement} */
 		this.nameElement = document.createElement('div');
@@ -47,17 +61,19 @@ class ScrumTask extends window.HTMLElement {
 	/** Element appends in DOM. */
 	connectedCallback() {
 		this.classList.add(container);
+		this.id = Math.floor(Math.random() * 1000);
 		this.render();
 		this.draggable = true;
-
 		this.name = 'Název';
 	}
 
-	/** Element removes from DOM. */
-	disconnectedCallback() {}
-
 	handleNameUpdate() {
 		this.name = this.nameElement.innerText;
+	}
+
+	handleDrag(e) {
+		e.dataTransfer.setData('text', e.target.id);
+		this.dragged = true;
 	}
 
 	/**

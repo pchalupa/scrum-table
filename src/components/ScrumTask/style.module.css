@@ -18,6 +18,12 @@
 	transition: 125ms ease-out;
 }
 
+.container.dragged {
+	filter: opacity(0.5);
+	box-shadow: none;
+	transition: 250ms ease-in-out;
+}
+
 .name {
 	font-size: 1.5rem;
 	font-weight: 800;

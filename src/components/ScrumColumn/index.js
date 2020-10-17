@@ -28,6 +28,15 @@ class ScrumColumn extends window.HTMLElement {
 		this.list = document.createElement('div');
 		this.list.classList.add(list);
 
+		this.addEventListener('dragover', (e) => e.preventDefault());
+
+		this.addEventListener('drop', (e) => {
+			e.preventDefault();
+			const task = document.getElementById(e.dataTransfer.getData('text'));
+			task.dragged = false;
+			this.list.appendChild(task);
+		});
+
 		/** @type {HTMLButtonElement} */
 		this.add = document.createElement('button');
 		this.add.classList.add(button);
