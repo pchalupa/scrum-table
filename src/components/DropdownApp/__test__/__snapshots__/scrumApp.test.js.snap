@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`dropdown-app renders correctly 1`] = `
+<dropdown-app
+  class="container"
+/>
+`;
