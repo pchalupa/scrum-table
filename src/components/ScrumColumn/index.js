@@ -43,7 +43,7 @@ class ScrumColumn extends window.HTMLElement {
 		/** @type {HTMLButtonElement} */
 		this.add = document.createElement('button');
 		this.add.classList.add(button);
-		this.add.textContent = '+ Úkol';
+		this.add.textContent = 'Úkol';
 
 		this.add.addEventListener('click', () => {
 			this.handleAddTask();
