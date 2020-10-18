@@ -35,6 +35,9 @@ class ScrumColumn extends window.HTMLElement {
 			const task = document.getElementById(e.dataTransfer.getData('text'));
 			task.dragged = false;
 			this.list.appendChild(task);
+			if (this.toast) {
+				this.toast.message = 'Úkol byl přesunut!';
+			}
 		});
 
 		/** @type {HTMLButtonElement} */
@@ -55,6 +58,9 @@ class ScrumColumn extends window.HTMLElement {
 
 	handleAddTask() {
 		this.list.appendChild(document.createElement('scrum-task'));
+		if (this.toast) {
+			this.toast.message = 'Úkol byl přidán';
+		}
 	}
 
 	/**

@@ -34,7 +34,7 @@ exports[`scrum-app renders correctly 1`] = `
   </scrum-column>
   <scrum-column
     class="container"
-    title="Středy"
+    title="Středa"
   >
     <div />
     <div
@@ -74,5 +74,8 @@ exports[`scrum-app renders correctly 1`] = `
       + Úkol
     </button>
   </scrum-column>
+  <toast-app
+    class="container"
+  />
 </scrum-app>
 `;
