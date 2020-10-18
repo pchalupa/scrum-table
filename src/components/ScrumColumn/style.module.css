@@ -19,3 +19,8 @@
 	padding: 1rem;
 	cursor: pointer;
 }
+
+.button::before {
+	content: '\00FF0B';
+	margin-right: 0.5rem;
+}

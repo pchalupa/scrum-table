@@ -11,7 +11,7 @@ exports[`scrum-column renders correctly 1`] = `
   <button
     class="button"
   >
-    + Úkol
+    Úkol
   </button>
 </scrum-column>
 `;
