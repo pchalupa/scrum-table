@@ -59,7 +59,7 @@ class ScrumColumn extends window.HTMLElement {
 	handleAddTask() {
 		this.list.appendChild(document.createElement('scrum-task'));
 		if (this.toast) {
-			this.toast.message = 'Úkol byl přidán';
+			this.toast.message = 'Úkol byl přidán!';
 		}
 	}
 
