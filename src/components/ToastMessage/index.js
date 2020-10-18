@@ -45,7 +45,7 @@ class ToastMessage extends window.HTMLElement {
 	connectedCallback() {
 		this.classList.add(container);
 		this.render();
-		this.animate(animations.slideIn, { duration: 250 });
+		this.animate && this.animate(animations.slideIn, { duration: 250 });
 
 		this.timeout = setTimeout(() => {
 			this.handleClose();
