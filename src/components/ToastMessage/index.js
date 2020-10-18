@@ -1,7 +1,7 @@
 /** @module ToastMessage */
 
 import { animations } from '../../constants';
-import { container, text, button } from './style.module.css';
+import { container, text } from './style.module.css';
 
 /**
  * Define custom-app web component.
