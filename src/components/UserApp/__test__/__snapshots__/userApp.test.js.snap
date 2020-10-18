@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`user-app renders correctly 1`] = `
+<user-app
+  class="container"
+>
+  <img
+    class="avatar"
+    src="https://via.placeholder.com/50C/O"
+  />
+</user-app>
+`;
