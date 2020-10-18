@@ -21,8 +21,11 @@ html {
 }
 
 body {
+	display: grid;
+	grid-template:
+		'header' 5rem
+		'table' 1fr;
 	margin: 0;
 	font-family: system-ui;
 	background-color: var(--background-color);
-	min-block-size: 100vh;
 }

@@ -1,7 +1,6 @@
 /** @module ScrumApp */
 
 import '../ScrumColumn';
-import '../ToastApp';
 import { config } from '../../constants';
 import { container } from './style.module.css';
 
@@ -16,9 +15,6 @@ class ScrumApp extends window.HTMLElement {
 		this.render();
 	}
 
-	/** Element removes from DOM. */
-	disconnectedCallback() {}
-
 	/**
 	 * Render component content.
 	 */
@@ -26,19 +22,14 @@ class ScrumApp extends window.HTMLElement {
 		/** @type {HTMLElement} */
 		const fragment = document.createDocumentFragment();
 
-		/** @type {AppToast} */
-		const toast = document.createElement('toast-app');
-
 		/** @type {SearchResult} */
-		this.columns = config.columns.map((columnTitle) => {
+		config.columns.map((columnTitle) => {
 			const column = document.createElement('scrum-column');
 			column.title = columnTitle;
-			column.toast = toast;
+			column.toast = this.toast;
 			fragment.appendChild(column);
 			return column;
 		});
-
-		fragment.appendChild(toast);
 
 		this.appendChild(fragment);
 	}

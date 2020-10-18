@@ -15,7 +15,7 @@ exports[`scrum-app renders correctly 1`] = `
     <button
       class="button"
     >
-      + Úkol
+      Úkol
     </button>
   </scrum-column>
   <scrum-column
@@ -29,7 +29,7 @@ exports[`scrum-app renders correctly 1`] = `
     <button
       class="button"
     >
-      + Úkol
+      Úkol
     </button>
   </scrum-column>
   <scrum-column
@@ -43,7 +43,7 @@ exports[`scrum-app renders correctly 1`] = `
     <button
       class="button"
     >
-      + Úkol
+      Úkol
     </button>
   </scrum-column>
   <scrum-column
@@ -57,7 +57,7 @@ exports[`scrum-app renders correctly 1`] = `
     <button
       class="button"
     >
-      + Úkol
+      Úkol
     </button>
   </scrum-column>
   <scrum-column
@@ -71,11 +71,8 @@ exports[`scrum-app renders correctly 1`] = `
     <button
       class="button"
     >
-      + Úkol
+      Úkol
     </button>
   </scrum-column>
-  <toast-app
-    class="container"
-  />
 </scrum-app>
 `;
