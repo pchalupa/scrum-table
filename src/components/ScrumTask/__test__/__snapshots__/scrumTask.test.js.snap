@@ -4,7 +4,7 @@ exports[`scrum-task renders correctly 1`] = `
 <scrum-task
   class="container"
   draggable="true"
-  id="669"
+  id="409"
   name="Název"
 >
   <div

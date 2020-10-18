@@ -3,5 +3,7 @@
 exports[`dropdown-app renders correctly 1`] = `
 <dropdown-app
   class="container"
-/>
+>
+  <ul />
+</dropdown-app>
 `;

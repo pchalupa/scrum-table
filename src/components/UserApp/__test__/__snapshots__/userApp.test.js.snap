@@ -8,5 +8,10 @@ exports[`user-app renders correctly 1`] = `
     class="avatar"
     src="https://via.placeholder.com/50C/O"
   />
+  <dropdown-app
+    class="container"
+  >
+    <ul />
+  </dropdown-app>
 </user-app>
 `;
