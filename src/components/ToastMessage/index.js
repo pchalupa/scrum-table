@@ -54,10 +54,10 @@ class ToastMessage extends window.HTMLElement {
 
 	handleClose() {
 		clearTimeout(this.timeout);
-		this.animate(animations.slideOut, { duration: 250 });
-		window.setTimeout(() => {
+		const animation = this.animate(animations.slideOut, { duration: 250 });
+		animation.onfinish = () => {
 			this.parentNode.removeChild(this);
-		}, 250);
+		};
 	}
 
 	/**
