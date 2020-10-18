@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`toast-app renders correctly 1`] = `
+<toast-app
+  class="container"
+/>
+`;

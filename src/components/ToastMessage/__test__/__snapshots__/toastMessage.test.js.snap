@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`toast-message renders correctly 1`] = `
+<toast-message
+  class="container"
+>
+  <p
+    class="text"
+  />
+</toast-message>
+`;

@@ -1,0 +1,28 @@
+.container {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem;
+	background-color: var(--primary-color);
+	border-radius: 0.5rem;
+	box-shadow: -0.5rem 0.5rem 1rem var(--shadow-color);
+	width: 20rem;
+	cursor: pointer;
+	transition: 150ms ease-in;
+}
+
+.container::after {
+	content: '\00274C';
+	margin-left: 1rem;
+}
+
+.container:hover {
+	background-color: var(--secondary-color);
+	transition: 150ms ease-in;
+}
+
+.text {
+	color: var(--tertiary-color);
+	word-wrap: break-word;
+}
