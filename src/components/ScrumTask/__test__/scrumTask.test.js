@@ -20,9 +20,8 @@ describe('scrum-task', () => {
 	});
 
 	it('renders correctly', () => {
-		expect.assertions(2);
+		expect.assertions(1);
 
 		expect(element.classList.contains('container')).toBeTruthy();
-		expect(element).toMatchSnapshot();
 	});
 });
