@@ -1,5 +1,6 @@
 /** @module UserApp */
 
+import '../DropdownApp';
 import { container, avatar } from './style.module.css';
 
 /**
@@ -9,9 +10,15 @@ import { container, avatar } from './style.module.css';
 class UserApp extends window.HTMLElement {
 	constructor() {
 		super();
+
+		/** @type {HTMLImageElement} */
 		this.avatarNode = document.createElement('img');
 		this.avatarNode.classList.add(avatar);
+
+		/** @type {DropdownApp} */
+		this.dropdown = document.createElement('dropdown-app');
 	}
+
 	/** Element appends in DOM. */
 	connectedCallback() {
 		this.classList.add(container);
@@ -26,7 +33,9 @@ class UserApp extends window.HTMLElement {
 		const fragment = document.createDocumentFragment();
 
 		this.avatarNode.src = 'https://via.placeholder.com/50C/O';
+
 		fragment.appendChild(this.avatarNode);
+		fragment.appendChild(this.dropdown);
 
 		this.appendChild(fragment);
 	}
