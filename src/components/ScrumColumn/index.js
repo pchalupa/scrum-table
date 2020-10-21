@@ -1,7 +1,7 @@
 /** @module ScrumColumn */
 
 import '../ScrumTask';
-import { container, list, button } from './style.module.css';
+import { container, focus, list, button } from './style.module.css';
 
 /**
  * Define custom-app web component.
@@ -18,6 +18,14 @@ class ScrumColumn extends window.HTMLElement {
 		return this.getAttribute('title');
 	}
 
+	set focus(status) {
+		this.classList.toggle(focus, status);
+	}
+
+	get focus() {
+		return this.classList.contains(focus);
+	}
+
 	constructor() {
 		super();
 
@@ -28,12 +36,20 @@ class ScrumColumn extends window.HTMLElement {
 		this.list = document.createElement('div');
 		this.list.classList.add(list);
 
-		this.addEventListener('dragover', (e) => e.preventDefault());
+		this.addEventListener('dragover', (e) => {
+			e.preventDefault();
+			this.focus = true;
+		});
+
+		this.addEventListener('dragleave', () => {
+			this.focus = false;
+		});
 
 		this.addEventListener('drop', (e) => {
 			e.preventDefault();
 			const task = document.getElementById(e.dataTransfer.getData('text'));
 			task.dragged = false;
+			this.focus = false;
 			this.list.appendChild(task);
 			if (this.toast) {
 				this.toast.message = 'Úkol byl přesunut!';
