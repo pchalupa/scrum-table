@@ -22,6 +22,15 @@ class ToastMessage extends window.HTMLElement {
 		return this.getAttribute('message');
 	}
 
+	/** @type {Number} */
+	set timeout(value) {
+		this.setAttribute('timeout', value);
+	}
+
+	get timeout() {
+		return parseInt(this.getAttribute('timeout'), 10);
+	}
+
 	constructor() {
 		super();
 
@@ -46,10 +55,11 @@ class ToastMessage extends window.HTMLElement {
 		this.classList.add(container);
 		this.render();
 		this.animate && this.animate(animations.slideIn, { duration: 250 });
+		this.animate && this.animate(animations.moveLeft, { duration: this.timeout, fill: 'forwards' });
 
 		this.timeout = setTimeout(() => {
 			this.handleClose();
-		}, 3000);
+		}, this.timeout);
 	}
 
 	handleClose() {

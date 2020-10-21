@@ -28,6 +28,14 @@ const animations = {
 			opacity: 0,
 		},
 	],
+	moveLeft: [
+		{
+			backgroundPositionX: '0%',
+		},
+		{
+			backgroundPositionX: '100%',
+		},
+	],
 };
 
 export { config, animations };

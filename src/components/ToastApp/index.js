@@ -25,7 +25,7 @@ class ToastApp extends window.HTMLElement {
 	/** Element attributes has change. */
 	attributeChangedCallback(name, oldValue, newValue) {
 		if (name === 'message') {
-			this.handleAddToast(newValue);
+			this.handleAddToast(newValue, 3000);
 		}
 	}
 
@@ -38,9 +38,10 @@ class ToastApp extends window.HTMLElement {
 	 * Append toast-message element
 	 * @param {String} message
 	 */
-	handleAddToast(message) {
+	handleAddToast(message, timeout) {
 		const toast = document.createElement('toast-message');
 		toast.message = message;
+		toast.timeout = timeout;
 		this.insertBefore(toast, this.firstChild);
 	}
 }
