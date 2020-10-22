@@ -3,6 +3,7 @@
 exports[`toast-message renders correctly 1`] = `
 <toast-message
   class="container"
+  timeout="8"
 >
   <p
     class="text"
