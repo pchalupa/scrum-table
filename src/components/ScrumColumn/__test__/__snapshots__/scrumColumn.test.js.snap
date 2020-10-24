@@ -4,7 +4,15 @@ exports[`scrum-column renders correctly 1`] = `
 <scrum-column
   class="container"
 >
-  <div />
+  <div
+    class="title"
+  >
+    <span
+      class="counter"
+    >
+      0
+    </span>
+  </div>
   <div
     class="list"
   />

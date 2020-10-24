@@ -8,7 +8,15 @@ exports[`scrum-app renders correctly 1`] = `
     class="container"
     title="Pondělí"
   >
-    <div />
+    <div
+      class="title"
+    >
+      <span
+        class="counter"
+      >
+        0
+      </span>
+    </div>
     <div
       class="list"
     />
@@ -22,7 +30,15 @@ exports[`scrum-app renders correctly 1`] = `
     class="container"
     title="Úterý"
   >
-    <div />
+    <div
+      class="title"
+    >
+      <span
+        class="counter"
+      >
+        0
+      </span>
+    </div>
     <div
       class="list"
     />
@@ -36,7 +52,15 @@ exports[`scrum-app renders correctly 1`] = `
     class="container"
     title="Středa"
   >
-    <div />
+    <div
+      class="title"
+    >
+      <span
+        class="counter"
+      >
+        0
+      </span>
+    </div>
     <div
       class="list"
     />
@@ -50,7 +74,15 @@ exports[`scrum-app renders correctly 1`] = `
     class="container"
     title="Čtvrtek"
   >
-    <div />
+    <div
+      class="title"
+    >
+      <span
+        class="counter"
+      >
+        0
+      </span>
+    </div>
     <div
       class="list"
     />
@@ -64,7 +96,15 @@ exports[`scrum-app renders correctly 1`] = `
     class="container"
     title="Pátek"
   >
-    <div />
+    <div
+      class="title"
+    >
+      <span
+        class="counter"
+      >
+        0
+      </span>
+    </div>
     <div
       class="list"
     />
