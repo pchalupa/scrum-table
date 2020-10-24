@@ -55,6 +55,7 @@ class ScrumTask extends window.HTMLElement {
 			this.name = this.nameElement.value;
 		});
 
+		/** @type {HTMLTextAreaElement} */
 		this.descriptionElement = document.createElement('textarea');
 		this.descriptionElement.placeholder = 'Popis';
 		this.descriptionElement.classList.add(description);
