@@ -1,6 +1,6 @@
 /** @module ScrumTask */
 
-import { container, name, dragged } from './style.module.css';
+import { container, name, description, dragged } from './style.module.css';
 
 /**
  * Define custom-app web component.
@@ -8,7 +8,7 @@ import { container, name, dragged } from './style.module.css';
  */
 class ScrumTask extends window.HTMLElement {
 	static get observedAttributes() {
-		return ['name'];
+		return ['name', 'description'];
 	}
 
 	/** @type {String} */
@@ -21,6 +21,16 @@ class ScrumTask extends window.HTMLElement {
 		return this.getAttribute('name');
 	}
 
+	/** @type {String} */
+	set description(value) {
+		this.setAttribute('description', value);
+		this.descriptionElement.value = value;
+	}
+
+	get description() {
+		return this.getAttribute('description');
+	}
+
 	/** @type {Boolean} */
 	set dragged(state) {
 		this.classList.toggle(dragged, state);
@@ -28,9 +38,6 @@ class ScrumTask extends window.HTMLElement {
 
 	constructor() {
 		super();
-
-		/** @type {Boolean} */
-		this.isEdited = false;
 
 		/** @type {Boolean} */
 		this.isDraged = false;
@@ -41,34 +48,38 @@ class ScrumTask extends window.HTMLElement {
 		});
 
 		/** @type {HTMLDivElement} */
-		this.nameElement = document.createElement('div');
+		this.nameElement = document.createElement('input');
+		this.nameElement.placeholder = 'Název';
 		this.nameElement.classList.add(name);
-
-		this.nameElement.addEventListener('click', (e) => {
-			e.target.contentEditable = true;
-			this.isEdited = true;
+		this.nameElement.addEventListener('change', () => {
+			this.name = this.nameElement.value;
 		});
 
-		window.addEventListener('keypress', (e) => {
-			if (e.key === 'Enter' && this.isEdited) {
-				e.preventDefault();
-				this.nameElement.contentEditable = false;
-				this.handleNameUpdate();
-			}
+		this.descriptionElement = document.createElement('textarea');
+		this.descriptionElement.placeholder = 'Popis';
+		this.descriptionElement.classList.add(description);
+		this.descriptionElement.addEventListener('change', () => {
+			this.description = this.descriptionElement.value;
 		});
 	}
 
 	/** Element appends in DOM. */
 	connectedCallback() {
+		this.draggable = true;
 		this.classList.add(container);
 		this.id = Math.floor(Math.random() * 1000);
 		this.render();
-		this.draggable = true;
-		this.name = 'Název';
 	}
 
-	handleNameUpdate() {
-		this.name = this.nameElement.innerText;
+	/** Element attributes has change. */
+	attributeChangedCallback(attribute, oldValue, newValue) {
+		if (attribute === 'name' && oldValue !== newValue) {
+			this.nameElement.value = newValue;
+		}
+
+		if (attribute === 'description' && oldValue !== newValue) {
+			this.descriptionElement.value = newValue;
+		}
 	}
 
 	handleDrag(e) {
@@ -83,6 +94,7 @@ class ScrumTask extends window.HTMLElement {
 		const fragment = document.createDocumentFragment();
 
 		fragment.appendChild(this.nameElement);
+		fragment.appendChild(this.descriptionElement);
 
 		this.appendChild(fragment);
 	}
