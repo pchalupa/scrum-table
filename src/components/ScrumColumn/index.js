@@ -1,7 +1,7 @@
 /** @module ScrumColumn */
 
 import '../ScrumTask';
-import { container, focus, list, button } from './style.module.css';
+import { container, focus, title, counter, list, button } from './style.module.css';
 
 /**
  * Define custom-app web component.
@@ -31,6 +31,12 @@ class ScrumColumn extends window.HTMLElement {
 
 		/** @type {HTMLDivElement} */
 		this.titleNode = document.createElement('div');
+		this.titleNode.classList.add(title);
+
+		/** @type {HTMLSpanElement} */
+		this.countNode = document.createElement('span');
+		this.countNode.classList.add(counter);
+		this.countNode.textContent = 0;
 
 		/** @type {HTMLDivElement} */
 		this.list = document.createElement('div');
@@ -70,6 +76,14 @@ class ScrumColumn extends window.HTMLElement {
 	connectedCallback() {
 		this.classList.add(container);
 		this.render();
+
+		const observer = new MutationObserver((mutations) => {
+			mutations.forEach((mutation) => {
+				this.handleListChange(mutation);
+			});
+		});
+
+		observer.observe(this.list, { childList: true });
 	}
 
 	handleAddTask() {
@@ -79,12 +93,17 @@ class ScrumColumn extends window.HTMLElement {
 		}
 	}
 
+	handleListChange() {
+		this.countNode.innerText = this.list.childElementCount;
+	}
+
 	/**
 	 * Render component content.
 	 */
 	render() {
 		const fragment = document.createDocumentFragment();
 
+		this.titleNode.appendChild(this.countNode);
 		fragment.appendChild(this.titleNode);
 		fragment.appendChild(this.list);
 		fragment.appendChild(this.add);

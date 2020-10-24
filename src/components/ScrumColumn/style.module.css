@@ -13,6 +13,22 @@
 	transition: 150ms ease-in;
 }
 
+.title {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.counter {
+	width: 1.5rem;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	background-color: var(--secondary-color);
+	color: var(--tertiary-color);
+	border-radius: 50%;
+	text-align: center;
+}
+
 .list {
 	display: flex;
 	flex-direction: column;
@@ -35,9 +51,15 @@
 	font-size: 1rem;
 	padding: 1rem;
 	cursor: pointer;
+	transition: 125ms ease-in;
 }
 
 .button::before {
 	content: '\00FF0B';
 	margin-right: 0.5rem;
+}
+
+.button:hover {
+	background-color: var(--secondary-color);
+	transition: 125ms ease-out;
 }
