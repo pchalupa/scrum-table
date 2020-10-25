@@ -105,17 +105,18 @@ class ScrumTask extends window.HTMLElement {
 		this.classList.add(container);
 		this.render();
 
-		this.db
-			.collection('tasks')
-			.doc(this.id)
-			.onSnapshot((doc) => {
-				const data = doc.data();
-				this.name = doc.id;
-				this.description = `${data.project}—${data.name}`;
-				this.link = data.link;
-				this.label = data.label;
-				this.estimate = data.estimate;
-			});
+		this.id &&
+			this.db
+				.collection('tasks')
+				.doc(this.id)
+				.onSnapshot((doc) => {
+					const data = doc.data();
+					this.name = doc.id;
+					this.description = `${data.project}—${data.name}`;
+					this.link = data.link;
+					this.label = data.label;
+					this.estimate = data.estimate;
+				});
 	}
 
 	/** Element attributes has change. */

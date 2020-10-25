@@ -78,10 +78,11 @@ class ScrumCollection extends window.HTMLElement {
 	connectedCallback() {
 		this.classList.add(container);
 		this.render();
-		this.db
-			.collection('tasks')
-			.where('collection', '==', this.name)
-			.onSnapshot((querySnapshot) => this.handleUpdate(querySnapshot));
+		this.name &&
+			this.db
+				.collection('tasks')
+				.where('collection', '==', this.name)
+				.onSnapshot((querySnapshot) => this.handleUpdate(querySnapshot));
 	}
 
 	/** Element attributes has change. */
