@@ -1,6 +1,7 @@
 /** @module ScrumTask */
 
-import { container, name, description, dragged } from './style.module.css';
+import Firebase from '../../services/Firebase';
+import { container, name, description, label, dragged } from './style.module.css';
 
 /**
  * Define custom-app web component.
@@ -8,7 +9,7 @@ import { container, name, description, dragged } from './style.module.css';
  */
 class ScrumTask extends window.HTMLElement {
 	static get observedAttributes() {
-		return ['name', 'description'];
+		return ['name', 'description', 'label'];
 	}
 
 	/** @type {String} */
@@ -24,11 +25,19 @@ class ScrumTask extends window.HTMLElement {
 	/** @type {String} */
 	set description(value) {
 		this.setAttribute('description', value);
-		this.descriptionElement.value = value;
+		this.descriptionElement.innerText = value;
 	}
 
 	get description() {
 		return this.getAttribute('description');
+	}
+
+	set label(value) {
+		this.setAttribute('label', value);
+	}
+
+	get label() {
+		return this.getAttribute('label');
 	}
 
 	/** @type {Boolean} */
@@ -39,37 +48,50 @@ class ScrumTask extends window.HTMLElement {
 	constructor() {
 		super();
 
+		/** @type {Firebase} */
+		this.db = Firebase.db;
+
 		/** @type {Boolean} */
 		this.isDraged = false;
 
-		this.addEventListener('dragstart', (e) => this.handleDrag(e));
-		this.addEventListener('dragend', () => {
-			this.dragged = false;
+		this.addEventListener('dragstart', (e) => {
+			e.dataTransfer.setData('text', this.id);
+			this.dragged = true;
 		});
 
 		/** @type {HTMLDivElement} */
-		this.nameElement = document.createElement('input');
-		this.nameElement.placeholder = 'Název';
+		this.nameElement = document.createElement('h2');
 		this.nameElement.classList.add(name);
 		this.nameElement.addEventListener('change', () => {
 			this.name = this.nameElement.value;
 		});
 
 		/** @type {HTMLTextAreaElement} */
-		this.descriptionElement = document.createElement('textarea');
-		this.descriptionElement.placeholder = 'Popis';
+		this.descriptionElement = document.createElement('span');
 		this.descriptionElement.classList.add(description);
 		this.descriptionElement.addEventListener('change', () => {
 			this.description = this.descriptionElement.value;
 		});
+
+		this.labelElement = document.createElement('span');
+		this.labelElement.classList.add(label);
+
+		this.dropdown = document.createElement('dropdown-app');
 	}
 
 	/** Element appends in DOM. */
 	connectedCallback() {
 		this.draggable = true;
 		this.classList.add(container);
-		this.id = Math.floor(Math.random() * 1000);
 		this.render();
+
+		this.db
+			.collection('tasks')
+			.doc(this.id)
+			.onSnapshot((doc) => {
+				const data = doc.data();
+				this.description = data.name;
+			});
 	}
 
 	/** Element attributes has change. */
@@ -81,11 +103,10 @@ class ScrumTask extends window.HTMLElement {
 		if (attribute === 'description' && oldValue !== newValue) {
 			this.descriptionElement.value = newValue;
 		}
-	}
 
-	handleDrag(e) {
-		e.dataTransfer.setData('text', e.target.id);
-		this.dragged = true;
+		if (attribute === 'label' && oldValue !== newValue) {
+			this.labelElement.innerText = newValue;
+		}
 	}
 
 	/**
@@ -95,7 +116,9 @@ class ScrumTask extends window.HTMLElement {
 		const fragment = document.createDocumentFragment();
 
 		fragment.appendChild(this.nameElement);
+		fragment.appendChild(this.dropdown);
 		fragment.appendChild(this.descriptionElement);
+		fragment.appendChild(this.labelElement);
 
 		this.appendChild(fragment);
 	}
