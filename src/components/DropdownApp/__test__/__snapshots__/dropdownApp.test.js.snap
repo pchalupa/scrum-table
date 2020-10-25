@@ -4,6 +4,11 @@ exports[`dropdown-app renders correctly 1`] = `
 <dropdown-app
   class="container"
 >
-  <ul />
+  <button
+    class="button"
+  />
+  <ul
+    class="list"
+  />
 </dropdown-app>
 `;
