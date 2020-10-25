@@ -9,7 +9,8 @@
 		"lint": "eslint -c .eslintrc.json --ext .js src/",
 		"lint:style": "stylelint src/*.css",
 		"start": "webpack-dev-server --open --config webpack.dev.js",
-		"build": "webpack --config webpack.prod.js"
+		"build": "webpack --config webpack.prod.js",
+		"deploy": "npm test && npm run build && npx firebase deploy"
 	},
 	"author": "Petr Chalupa",
 	"license": "ISC",
@@ -27,6 +28,7 @@
 		"eslint-plugin-import": "^2.22.1",
 		"eslint-plugin-jest": "^24.1.0",
 		"eslint-plugin-prettier": "^3.1.4",
+		"firebase-tools": "^7.16.2",
 		"jest": "^26.5.3",
 		"jest-css-modules": "^2.1.0",
 		"jest-fetch-mock": "^3.0.3",
@@ -49,6 +51,7 @@
 	],
 	"dependencies": {
 		"clean-webpack-plugin": "^3.0.0",
+		"firebase": "^7.24.0",
 		"html-webpack-plugin": "^4.5.0",
 		"mini-css-extract-plugin": "^0.11.3",
 		"optimize-css-assets-webpack-plugin": "^5.0.4",
