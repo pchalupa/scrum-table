@@ -24,9 +24,12 @@ class ScrumApp extends window.HTMLElement {
 
 		collections.forEach((value, key) => {
 			const collection = document.createElement('scrum-collection');
+
 			collection.name = key;
-			collection.title = value;
 			collection.toast = this.toast;
+			collection.title = value.title;
+			collection.direction = value.direction;
+
 			fragment.appendChild(collection);
 		});
 

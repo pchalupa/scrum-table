@@ -14,6 +14,10 @@
 	transition: 150ms ease-in;
 }
 
+.container.row {
+	grid-column: 1/-1;
+}
+
 .name {
 	display: flex;
 	align-items: center;
@@ -33,4 +37,9 @@
 .tasks {
 	display: flex;
 	flex-direction: column;
+}
+
+.container.row .tasks {
+	flex-direction: row;
+	gap: 2rem;
 }

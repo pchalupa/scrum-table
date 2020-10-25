@@ -2,7 +2,7 @@
 
 import '../ScrumTask';
 import Firebase from '../../services/Firebase';
-import { container, focus, name, counter, tasks } from './style.module.css';
+import { container, row, focus, name, counter, tasks } from './style.module.css';
 
 /**
  * Define custom-app web component.
@@ -29,6 +29,15 @@ class ScrumCollection extends window.HTMLElement {
 
 	get title() {
 		return this.getAttribute('title');
+	}
+
+	/** @type {Boolean} */
+	set direction(value) {
+		value === 'row' && this.classList.add(row);
+	}
+
+	get direction() {
+		return this.classList.contains(row);
 	}
 
 	set focus(status) {
