@@ -5,32 +5,203 @@ exports[`scrum-app renders correctly 1`] = `
   class="container"
 >
   <scrum-collection
+    class="container"
     title="Pondělí"
-  />
+  >
+    <div
+      class="name"
+    >
+      <span
+        class="counter"
+      >
+        0
+      </span>
+      <span
+        class="timer"
+      >
+        0
+      </span>
+    </div>
+    <div
+      class="tasks"
+    />
+  </scrum-collection>
   <scrum-collection
+    class="container"
     title="Úterý"
-  />
+  >
+    <div
+      class="name"
+    >
+      <span
+        class="counter"
+      >
+        0
+      </span>
+      <span
+        class="timer"
+      >
+        0
+      </span>
+    </div>
+    <div
+      class="tasks"
+    />
+  </scrum-collection>
   <scrum-collection
+    class="container"
     title="Středa"
-  />
+  >
+    <div
+      class="name"
+    >
+      <span
+        class="counter"
+      >
+        0
+      </span>
+      <span
+        class="timer"
+      >
+        0
+      </span>
+    </div>
+    <div
+      class="tasks"
+    />
+  </scrum-collection>
   <scrum-collection
+    class="container"
     title="Čtvrtek"
-  />
+  >
+    <div
+      class="name"
+    >
+      <span
+        class="counter"
+      >
+        0
+      </span>
+      <span
+        class="timer"
+      >
+        0
+      </span>
+    </div>
+    <div
+      class="tasks"
+    />
+  </scrum-collection>
   <scrum-collection
+    class="container"
     title="Pátek"
-  />
+  >
+    <div
+      class="name"
+    >
+      <span
+        class="counter"
+      >
+        0
+      </span>
+      <span
+        class="timer"
+      >
+        0
+      </span>
+    </div>
+    <div
+      class="tasks"
+    />
+  </scrum-collection>
   <scrum-collection
+    class="container"
     title="Hotovo"
-  />
+  >
+    <div
+      class="name"
+    >
+      <span
+        class="counter"
+      >
+        0
+      </span>
+      <span
+        class="timer"
+      >
+        0
+      </span>
+    </div>
+    <div
+      class="tasks"
+    />
+  </scrum-collection>
   <scrum-collection
+    class="container"
     title="Rozpracováno"
-  />
+  >
+    <div
+      class="name"
+    >
+      <span
+        class="counter"
+      >
+        0
+      </span>
+      <span
+        class="timer"
+      >
+        0
+      </span>
+    </div>
+    <div
+      class="tasks"
+    />
+  </scrum-collection>
   <scrum-collection
+    class="container"
     title="Odloženo"
-  />
+  >
+    <div
+      class="name"
+    >
+      <span
+        class="counter"
+      >
+        0
+      </span>
+      <span
+        class="timer"
+      >
+        0
+      </span>
+    </div>
+    <div
+      class="tasks"
+    />
+  </scrum-collection>
   <scrum-collection
-    title="Hotovo"
-  />
+    class="row container"
+    title="Backlog"
+  >
+    <div
+      class="name"
+    >
+      <span
+        class="counter"
+      >
+        0
+      </span>
+      <span
+        class="timer"
+      >
+        0
+      </span>
+    </div>
+    <div
+      class="tasks"
+    />
+  </scrum-collection>
   <scrum-backlog />
 </scrum-app>
 `;

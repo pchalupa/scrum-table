@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`scrum-collection renders correctly 1`] = `
+<scrum-collection
+  class="container"
+>
+  <div
+    class="name"
+  >
+    <span
+      class="counter"
+    >
+      0
+    </span>
+    <span
+      class="timer"
+    >
+      0
+    </span>
+  </div>
+  <div
+    class="tasks"
+  />
+</scrum-collection>
+`;
