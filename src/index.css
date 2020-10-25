@@ -3,6 +3,10 @@
 	--secondary-color: #e6e6e8;
 	--tertiary-color: #9e9fa4;
 	--background-color: #f5f6f8;
+	--black: #000;
+	--white: #fff;
+	--green: #15ab48;
+	--lighten-green: #e7f2ea;
 	--shadow-color: rgba(0, 0, 0, 0.1);
 	--base-font-size: 16px;
 }
