@@ -2,7 +2,6 @@
 import * as firebase from 'firebase/app';
 import { firebaseConfig } from '../constants';
 import 'firebase/analytics';
-import 'firebase/auth';
 import 'firebase/firestore';
 
 /** Defines Firebase service */
