@@ -1,6 +1,13 @@
-const config = {
-	columns: ['Pondělí', 'Úterý', 'Středa', 'Čtvrtek', 'Pátek'],
-};
+const collections = new Map()
+	.set('monday', { title: 'Pondělí' })
+	.set('tuesday', { title: 'Úterý' })
+	.set('wednesday', { title: 'Středa' })
+	.set('thursday', { title: 'Čtvrtek' })
+	.set('friday', { title: 'Pátek' })
+	.set('done', { title: 'Hotovo' })
+	.set('progress', { title: 'Rozpracováno' })
+	.set('postpone', { title: 'Odloženo' })
+	.set('backlog', { title: 'Backlog', direction: 'row' });
 
 const animations = {
 	slideIn: [
@@ -38,4 +45,17 @@ const animations = {
 	],
 };
 
-export { config, animations };
+export { collections, firebaseConfig, animations };
+
+/*
+		db.collection('tasks').doc('11199').set({
+			project: 'ProjectX',
+			assigne: 'Petr C.',
+			label: 'Řešit',
+			dueOn: 20201023,
+			name: 'Ukol 5',
+			link: '',
+			estimate: 5,
+			collection: 'backlog',
+		});
+		*/
