@@ -1,7 +1,7 @@
 /** @module ScrumApp */
 
-import '../ScrumColumn';
-import { config } from '../../constants';
+import '../ScrumCollection';
+import { collections } from '../../constants';
 import { container } from './style.module.css';
 
 /**
@@ -22,14 +22,16 @@ class ScrumApp extends window.HTMLElement {
 		/** @type {HTMLElement} */
 		const fragment = document.createDocumentFragment();
 
-		/** @type {SearchResult} */
-		config.columns.map((columnTitle) => {
-			const column = document.createElement('scrum-column');
-			column.title = columnTitle;
-			column.toast = this.toast;
-			fragment.appendChild(column);
-			return column;
+		collections.forEach((value, key) => {
+			const collection = document.createElement('scrum-collection');
+			collection.name = key;
+			collection.title = value;
+			collection.toast = this.toast;
+			fragment.appendChild(collection);
 		});
+
+		const backlog = document.createElement('scrum-backlog');
+		fragment.appendChild(backlog);
 
 		this.appendChild(fragment);
 	}
