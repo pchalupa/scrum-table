@@ -8,14 +8,11 @@
 	cursor: pointer;
 }
 
-.container::after {
-	content: '\00FE19';
-	font-size: 1.5rem;
-	color: var(--tertiary-color);
-}
-
 .avatar {
 	border-radius: 50%;
-	border-color: var(--primary-color);
+	border-color: var(--white);
 	border-style: solid;
+	background-color: var(--black);
+	width: 2.5rem;
+	height: 2.5rem;
 }

@@ -6,12 +6,16 @@ exports[`user-app renders correctly 1`] = `
 >
   <img
     class="avatar"
-    src="https://via.placeholder.com/50C/O"
   />
   <dropdown-app
     class="container"
   >
-    <ul />
+    <button
+      class="button"
+    />
+    <ul
+      class="list"
+    />
   </dropdown-app>
 </user-app>
 `;
