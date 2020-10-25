@@ -32,8 +32,6 @@ class UserApp extends window.HTMLElement {
 		/** @type {HTMLElement} */
 		const fragment = document.createDocumentFragment();
 
-		this.avatarNode.src = 'https://via.placeholder.com/50C/O';
-
 		fragment.appendChild(this.avatarNode);
 		fragment.appendChild(this.dropdown);
 
