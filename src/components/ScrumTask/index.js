@@ -85,7 +85,6 @@ class ScrumTask extends window.HTMLElement {
 		/** @type {HTMLSpanElement} */
 		this.handleElement = document.createElement('span');
 		this.handleElement.classList.add(handle);
-		this.handleElement.innerText = '✊';
 
 		/** @type {HTMLSpanElement} */
 		this.descriptionElement = document.createElement('span');
