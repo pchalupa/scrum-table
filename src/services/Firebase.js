@@ -16,6 +16,16 @@ class Firebase {
 	static initialize() {
 		firebase.initializeApp(firebaseConfig);
 	}
+
+	static async updateTaskCollection(id, collection) {
+		try {
+			await this.db.collection('tasks').doc(id).update({
+				collection: collection,
+			});
+		} catch (error) {
+			console.error(error);
+		}
+	}
 }
 
 export default Firebase;
