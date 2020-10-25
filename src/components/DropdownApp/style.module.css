@@ -1,8 +1,8 @@
 .container {
 	position: relative;
 	display: flex;
-	align-items: start;
-	justify-self: end;
+	align-items: flex-start;
+	justify-self: flex-end;
 }
 
 .button {
