@@ -80,6 +80,7 @@ class ScrumTask extends window.HTMLElement {
 		this.nameElement = document.createElement('a');
 		this.nameElement.classList.add(name);
 		this.nameElement.target = '_blank';
+		this.nameElement.rel = 'noopener';
 
 		/** @type {HTMLSpanElement} */
 		this.handleElement = document.createElement('span');
