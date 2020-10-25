@@ -5,9 +5,10 @@
 	--background-color: #f5f6f8;
 	--black: #000;
 	--white: #fff;
+	--lighten-grey: #f0f0f0;
 	--green: #15ab48;
 	--lighten-green: #e7f2ea;
-	--shadow-color: rgba(0, 0, 0, 0.1);
+	--shadow-color: rgba(0, 0, 0, 0.05);
 	--base-font-size: 16px;
 }
 
