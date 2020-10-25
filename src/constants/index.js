@@ -9,6 +9,17 @@ const collections = new Map()
 	.set('postpone', { title: 'Odloženo' })
 	.set('backlog', { title: 'Backlog', direction: 'row' });
 
+const firebaseConfig = {
+	apiKey: 'AIzaSyBUBxbIAysLwKvMrh4k4Rx5hOl2tp6C2OA',
+	authDomain: 'scrum-table-2034c.firebaseapp.com',
+	databaseURL: 'https://scrum-table-2034c.firebaseio.com',
+	projectId: 'scrum-table-2034c',
+	storageBucket: 'scrum-table-2034c.appspot.com',
+	messagingSenderId: '444536664353',
+	appId: '1:444536664353:web:8f42949d5167b8a5b20e60',
+	measurementId: 'G-925LQ42FBG',
+};
+
 const animations = {
 	slideIn: [
 		{
