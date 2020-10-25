@@ -1,16 +1,18 @@
 .container {
 	display: grid;
-	grid-template-columns: 1fr 0.25fr;
-	grid-template-rows: 0.75fr 1fr;
+	grid-template-columns: 1fr 0.15fr;
+	grid-template-rows: 1fr 1fr 1fr;
 	grid-template-areas:
-		'name menu'
-		'description description';
+		'name handle'
+		'description description'
+		'label estimated';
 	gap: 1rem;
 	background-color: var(--primary-color);
 	border-radius: 0.5rem;
 	box-shadow: -1rem 0.25rem 0.5rem var(--shadow-color);
 	padding: 1rem;
 	margin-top: 1rem;
+	cursor: grab;
 	transition: 125ms ease-in;
 }
 
@@ -28,8 +30,23 @@
 }
 
 .name {
+	display: flex;
 	grid-area: 'name';
-	margin: 0;
+	justify-self: start;
+	font-size: 1.25rem;
+	color: var(--black);
+	text-decoration: none;
+	font-weight: 800;
+	gap: 0.5rem;
+}
+
+.name[href*='http']::after {
+	content: '\01F517';
+}
+
+.handle {
+	grid-area: 'handle';
+	justify-self: end;
 }
 
 .description {
@@ -38,9 +55,22 @@
 }
 
 .label {
-	justify-self: flex-start;
+	grid-area: 'label';
+	justify-self: start;
 	background-color: var(--lighten-green);
 	color: var(--green);
 	border-radius: 1rem;
 	padding: 0.25rem 0.5rem;
+}
+
+.estimate {
+	grid-area: 'estimated';
+	display: flex;
+	justify-self: end;
+	gap: 0.25rem;
+	color: var(--tertiary-color);
+}
+
+.estimate::after {
+	content: '\0023F1';
 }
