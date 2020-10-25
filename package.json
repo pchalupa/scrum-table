@@ -5,7 +5,7 @@
 	"main": "./src/index.js",
 	"scripts": {
 		"docs": "jsdoc -r -c .jsdoc.json README.md -d docs ",
-		"test": "jest",
+		"test": "jest --forceExit",
 		"lint": "eslint -c .eslintrc.json --ext .js src/",
 		"lint:style": "stylelint src/*.css",
 		"start": "webpack-dev-server --open --config webpack.dev.js",
