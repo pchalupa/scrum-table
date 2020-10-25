@@ -6,12 +6,7 @@
 	border: 0.25rem solid transparent;
 	border-radius: 0.5rem;
 	padding-bottom: 5rem;
-	transition: 150ms ease-out;
-}
-
-.container.focus {
-	border-color: var(--secondary-color);
-	transition: 150ms ease-in;
+	border-color: var(--lighten-grey);
 }
 
 .container.row {
@@ -32,6 +27,16 @@
 	background-color: var(--secondary-color);
 	border-radius: 50%;
 	text-align: center;
+}
+
+.timer {
+	display: flex;
+	gap: 0.25rem;
+	margin-left: auto;
+}
+
+.timer::after {
+	content: '\0023F1';
 }
 
 .tasks {

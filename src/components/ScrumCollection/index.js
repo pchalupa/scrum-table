@@ -2,7 +2,7 @@
 
 import '../ScrumTask';
 import Firebase from '../../services/Firebase';
-import { container, row, focus, name, counter, tasks } from './style.module.css';
+import { container, row, name, counter, timer, tasks } from './style.module.css';
 
 /**
  * Define custom-app web component.
@@ -40,14 +40,6 @@ class ScrumCollection extends window.HTMLElement {
 		return this.classList.contains(row);
 	}
 
-	set focus(status) {
-		this.classList.toggle(focus, status);
-	}
-
-	get focus() {
-		return this.classList.contains(focus);
-	}
-
 	constructor() {
 		super();
 		/** @type {Firebase} */
@@ -62,26 +54,23 @@ class ScrumCollection extends window.HTMLElement {
 		this.countElement.classList.add(counter);
 		this.countElement.textContent = 0;
 
+		/** @type {HTMLSpanElement} */
+		this.timeElement = document.createElement('span');
+		this.timeElement.classList.add(timer);
+		this.timeElement.textContent = 0;
+
 		/** @type {HTMLDivElement} */
 		this.tasks = document.createElement('div');
 		this.tasks.classList.add(tasks);
 
-		this.addEventListener('dragover', (e) => {
-			e.preventDefault();
-			this.focus = true;
-		});
-
-		this.addEventListener('dragleave', () => {
-			this.focus = false;
-		});
-
+		this.addEventListener('dragover', (e) => e.preventDefault());
 		this.addEventListener('drop', (e) => {
 			e.preventDefault();
 			const task = document.getElementById(e.dataTransfer.getData('text'));
-			this.focus = false;
-			Firebase.updateTaskCollection(task.id, this.name).then(() => {
-				this.toast.message = `Úkol byl přesunut do "${this.title}"!`;
-			});
+			task &&
+				Firebase.updateTaskCollection(task.id, this.name).then(() => {
+					this.toast.message = `Úkol byl přesunut do "${this.title}"!`;
+				});
 		});
 	}
 
@@ -105,15 +94,16 @@ class ScrumCollection extends window.HTMLElement {
 	handleUpdate(querySnapshot) {
 		this.tasks.innerHTML = '';
 		this.countElement.innerText = querySnapshot.size;
+		let time = 0;
+
 		querySnapshot.forEach((doc) => {
-			const data = doc.data();
 			const task = document.createElement('scrum-task');
 			task.id = doc.id;
-			task.name = doc.id;
-			task.label = data.label;
-			task.description = data.name;
+			time += doc.data().estimate;
 			this.tasks.appendChild(task);
 		});
+
+		this.timeElement.innerText = time;
 	}
 
 	/**
@@ -123,6 +113,7 @@ class ScrumCollection extends window.HTMLElement {
 		const fragment = document.createDocumentFragment();
 
 		this.titleElement.appendChild(this.countElement);
+		this.titleElement.appendChild(this.timeElement);
 		fragment.appendChild(this.titleElement);
 		fragment.appendChild(this.tasks);
 
