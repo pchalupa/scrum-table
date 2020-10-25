@@ -1,0 +1,36 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	padding: 1rem;
+	border: 0.25rem solid transparent;
+	border-radius: 0.5rem;
+	padding-bottom: 5rem;
+	transition: 150ms ease-out;
+}
+
+.container.focus {
+	border-color: var(--secondary-color);
+	transition: 150ms ease-in;
+}
+
+.name {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	color: var(--tertiary-color);
+}
+
+.counter {
+	width: 1.5rem;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	background-color: var(--secondary-color);
+	border-radius: 50%;
+	text-align: center;
+}
+
+.tasks {
+	display: flex;
+	flex-direction: column;
+}
