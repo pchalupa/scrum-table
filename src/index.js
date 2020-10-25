@@ -1,7 +1,11 @@
 import './components/ScrumApp';
 import './components/ToastApp';
 import './components/UserApp';
+import Firebase from './services/Firebase';
 import './index.css';
+
+/** Firebase */
+Firebase.initialize();
 
 /** @type {HTMLElement} */
 const fragment = document.createDocumentFragment();
