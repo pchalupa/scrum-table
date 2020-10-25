@@ -15,7 +15,7 @@ class Firebase {
 
 	/** Initialize Firebase services. */
 	static initialize() {
-		firebase.initializeApp(firebaseConfig);
+		firebaseConfig && firebase.initializeApp(firebaseConfig);
 	}
 
 	static async updateTaskCollection(id, collection) {
