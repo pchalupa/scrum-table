@@ -9,6 +9,7 @@ import 'firebase/firestore';
 class Firebase {
 	/** @type {Firebase} */
 	static get db() {
+		firebase.apps.length === 0 && this.initialize();
 		return firebase.firestore();
 	}
 
